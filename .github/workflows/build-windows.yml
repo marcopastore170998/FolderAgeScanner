@@ -22,15 +22,17 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install Node Dependencies
-        run: npm install --legacy-peer-deps
+        run: |
+          npm install --legacy-peer-deps
+          npm install --package-lock-only
 
       - name: Build Tauri Desktop App
-        uses: tauri-apps/tauri-action@v0
+        uses: tauri-apps/tauri-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tagName: v__VERSION__
-          releaseName: 'App Release v__VERSION__'
+          tagName: v1.0.${{ github.run_number }}
+          releaseName: 'App Release v1.0.${{ github.run_number }}'
           releaseBody: 'Nuova versione compilata dell app desktop.'
-          releaseDraft: true
+          releaseDraft: false
           prerelease: false
