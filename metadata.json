@@ -1,0 +1,6 @@
+{
+  "name": "Folder Age & Size Analyzer",
+  "description": "Analisi cartelle ad albero: rileva ultima modifica e dimensione con evidenziazione cartelle per anno.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
